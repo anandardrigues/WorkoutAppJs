@@ -115,21 +115,22 @@
             if (storedTreino) {
                 treinoData = JSON.parse(storedTreino);
             } else {
-                treinoData = [
-                    {
-                        id: 'treino-1',
-                        titulo: 'Treino de Força Superior',
-                        descricao: 'Foco em peito, costas e ombros.',
-                        exercicios: [
-                        { nome: 'Remada Baixa Unilateral', series: '4', repeticoes: '8-10', carga: '3kg' },
-                        { nome: 'Remada Curvada Pegada Pronada', series: '5', repeticoes: '10-12', carga: '40kg' },
-                        { nome: 'Puxada Alta na frente', series: '5', repeticoes: '10-12', carga: '40kg' },
-                        { nome: 'Pulldown', series: '3', repeticoes: '10-12', carga: '20kg' },
-                        { nome: 'Rosca Martelo', series: '3', repeticoes: '10-12', carga: '20kg' },
-                        { nome: 'Rosca Direta com Barra ou Rosca Alternada com Halteres', series: '4', repeticoes: '10-12', carga: '20kg' },
-                        ]
-                    },
-                    id: 'treino-2',
+                const treinoData = [
+  {
+    id: 'treino-1',
+    titulo: 'Treino de Força Superior',
+    descricao: 'Foco em peito, costas e ombros.',
+    exercicios: [
+      { nome: 'Remada Baixa Unilateral', series: '4', repeticoes: '8-10', carga: '3kg' },
+      { nome: 'Remada Curvada Pegada Pronada', series: '5', repeticoes: '10-12', carga: '40kg' },
+      { nome: 'Puxada Alta na frente', series: '5', repeticoes: '10-12', carga: '40kg' },
+      { nome: 'Pulldown', series: '3', repeticoes: '10-12', carga: '20kg' },
+      { nome: 'Rosca Martelo', series: '3', repeticoes: '10-12', carga: '20kg' },
+      { nome: 'Rosca Direta com Barra ou Rosca Alternada com Halteres', series: '4', repeticoes: '10-12', carga: '20kg' },
+    ]
+  },
+  {
+    id: 'treino-2',
     titulo: 'Treino de Pernas e Glúteos',
     descricao: 'Para fortalecer a parte inferior do corpo.',
     exercicios: [
@@ -140,8 +141,8 @@
       { nome: 'Glúteo Coice na Polia', series: '3', repeticoes: '15-20', carga: '30kg' },
     ]
   },
-                    {
-                         id: 'treino-3',
+  {
+    id: 'treino-3',
     titulo: 'Treino de Peito, Ombros e Tríceps',
     descricao: 'Foco em peito, ombros e tríceps.',
     exercicios: [
@@ -191,10 +192,8 @@
     ]
   }
 ];
-                localStorage.setItem('treino-aluno', JSON.stringify(treinoData));
-            }
-        };
 
+localStorage.setItem('treino-aluno', JSON.stringify(treinoData));
         const loadProfTreinoData = () => {
             const storedProfTreino = localStorage.getItem('treino-prof');
             if (storedProfTreino) {
