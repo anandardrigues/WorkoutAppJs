@@ -110,90 +110,91 @@
             localStorage.setItem('treino-app-data', JSON.stringify(userData));
         };
 
-        const loadTreinoData = () => {
-            const storedTreino = localStorage.getItem('treino-aluno');
-            if (storedTreino) {
-                treinoData = JSON.parse(storedTreino);
-            } else {
-                const treinoData = [
-  {
-    id: 'treino-1',
-    titulo: 'Treino de Força Superior',
-    descricao: 'Foco em peito, costas e ombros.',
-    exercicios: [
-      { nome: 'Remada Baixa Unilateral', series: '4', repeticoes: '8-10', carga: '3kg' },
-      { nome: 'Remada Curvada Pegada Pronada', series: '5', repeticoes: '10-12', carga: '40kg' },
-      { nome: 'Puxada Alta na frente', series: '5', repeticoes: '10-12', carga: '40kg' },
-      { nome: 'Pulldown', series: '3', repeticoes: '10-12', carga: '20kg' },
-      { nome: 'Rosca Martelo', series: '3', repeticoes: '10-12', carga: '20kg' },
-      { nome: 'Rosca Direta com Barra ou Rosca Alternada com Halteres', series: '4', repeticoes: '10-12', carga: '20kg' },
-    ]
-  },
-  {
-    id: 'treino-2',
-    titulo: 'Treino de Pernas e Glúteos',
-    descricao: 'Para fortalecer a parte inferior do corpo.',
-    exercicios: [
-      { nome: 'Agachamento Búlgaro', series: '5', repeticoes: '10-12', carga: '60kg' },
-      { nome: 'Elevação de Quadril', series: '5', repeticoes: '8-10', carga: '100kg' },
-      { nome: 'Stiff', series: '4', repeticoes: '12-15', carga: '30kg' },
-      { nome: 'Passada com Halteres', series: '4', repeticoes: '10', carga: '30kg' },
-      { nome: 'Glúteo Coice na Polia', series: '3', repeticoes: '15-20', carga: '30kg' },
-    ]
-  },
-  {
-    id: 'treino-3',
-    titulo: 'Treino de Peito, Ombros e Tríceps',
-    descricao: 'Foco em peito, ombros e tríceps.',
-    exercicios: [
-      { nome: 'Supino Inclinado com Halteres', series: '4', repeticoes: '8-10', carga: '60kg' },
-      { nome: 'Desenvolvimento de Ombros com Barra', series: '5', repeticoes: '8-10', carga: '100kg' },
-      { nome: 'Crucifixo Inclinado com Halteres', series: '4', repeticoes: '12-15', carga: '30kg' },
-      { nome: 'Elevação Lateral com Halteres', series: '4', repeticoes: '10', carga: '30kg' },
-      { nome: 'Tríceps Testa com Barra W', series: '3', repeticoes: '15-20', carga: '30kg' },
-      { nome: 'Paralela', series: '3', repeticoes: '15-20', carga: '30kg' },
-    ]
-  },
-  {
-    id: 'treino-4',
-    titulo: 'Treino de Quadríceps e Panturrilhas',
-    descricao: 'Para fortalecer a parte inferior do corpo.',
-    exercicios: [
-      { nome: 'Agachamento Livre', series: '4', repeticoes: '8-10', carga: '60kg' },
-      { nome: 'Leg Press 45', series: '5', repeticoes: '8-10', carga: '100kg' },
-      { nome: 'Cadeira Extensora', series: '4', repeticoes: '12-15', carga: '30kg' },
-      { nome: 'Hack Squat', series: '4', repeticoes: '10', carga: '30kg' },
-      { nome: 'Panturrilhas', series: '3', repeticoes: '15-20', carga: '30kg' },
-    ]
-  },
-  {
-    id: 'treino-5',
-    titulo: 'Treino de Peito e Costas',
-    descricao: 'Para fortalecer a parte superior do corpo.',
-    exercicios: [
-      { nome: 'Supino Reto com Barra', series: '4', repeticoes: '8-10', carga: '60kg' },
-      { nome: 'Remada Cavalinho', series: '5', repeticoes: '8-10', carga: '100kg' },
-      { nome: 'Crossover', series: '4', repeticoes: '12-15', carga: '30kg' },
-      { nome: 'Puxada com Pegada Fechada (Triângulo)', series: '4', repeticoes: '10', carga: '30kg' },
-      { nome: 'Desenvolvimento de Ombros com Halteres', series: '3', repeticoes: '15-20', carga: '30kg' },
-      { nome: 'Remada Alta', series: '3', repeticoes: '15-20', carga: '30kg' },
-    ]
-  },
-  {
-    id: 'treino-6',
-    titulo: 'Treino de Posterior de Coxa e Panturrilhas',
-    descricao: 'Para fortalecer a parte inferior do corpo.',
-    exercicios: [
-      { nome: 'Stiff com Barra', series: '4', repeticoes: '8-10', carga: '60kg' },
-      { nome: 'Mesa Flexora', series: '5', repeticoes: '8-10', carga: '100kg' },
-      { nome: 'Leg Press Unilateral', series: '4', repeticoes: '12-15', carga: '30kg' },
-      { nome: 'Cadeira Flexora', series: '4', repeticoes: '10', carga: '30kg' },
-      { nome: 'Panturrilhas', series: '3', repeticoes: '15-20', carga: '30kg' },
-    ]
-  }
-];
+       const loadTreinoData = () => {
+    const storedTreino = localStorage.getItem('treino-aluno');
+    if (storedTreino) {
+        treinoData = JSON.parse(storedTreino);
+    } else {
+        treinoData = [
+            {
+                id: 'treino-1',
+                titulo: 'Treino de Costas e Bíceps',
+                descricao: 'Foco no desenvolvimento de costas e bíceps.',
+                exercicios: [
+                    { nome: 'Remada Baixa Unilateral', series: '4', repeticoes: '8-10', carga: 'Carga Desafiadora', mediaUrl: 'https://www.youtube.com/embed/gT2895S1aI4', mediaType: 'video' },
+                    { nome: 'Remada Curvada Pegada Pronada', series: '4', repeticoes: '10-12', carga: '40kg', mediaUrl: 'https://placehold.co/600x400/90EE90/000?text=Remada+Curvada', mediaType: 'image' },
+                    { nome: 'Puxada Alta na Frente', series: '4', repeticoes: '10-12', carga: '40kg', mediaUrl: 'https://www.youtube.com/embed/ultjWp9fR6Q', mediaType: 'video' },
+                    { nome: 'Pulldown', series: '3', repeticoes: '10-12', carga: '20kg', mediaUrl: 'https://placehold.co/600x400/ADD8E6/000?text=Pulldown', mediaType: 'image' },
+                    { nome: 'Rosca Direta com Barra', series: '4', repeticoes: '10-12', carga: '20kg', mediaUrl: 'https://www.youtube.com/embed/eTz5J-2Bf7w', mediaType: 'video' },
+                ]
+            },
+            {
+                id: 'treino-2',
+                titulo: 'Treino de Pernas e Glúteos',
+                descricao: 'Foco em pernas (quadríceps e posteriores) e glúteos.',
+                exercicios: [
+                    { nome: 'Agachamento Búlgaro', series: '5', repeticoes: '10-12', carga: 'Carga Desafiadora', mediaUrl: 'https://placehold.co/600x400/FFB6C1/000?text=Agachamento+Bulgaro', mediaType: 'image' },
+                    { nome: 'Elevação de Quadril', series: '5', repeticoes: '8-10', carga: 'Carga Desafiadora', mediaUrl: 'https://www.youtube.com/embed/yQ0a400f6jU', mediaType: 'video' },
+                    { nome: 'Stiff', series: '4', repeticoes: '12-15', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/98FB98/000?text=Stiff', mediaType: 'image' },
+                    { nome: 'Passada com Halteres', series: '4', repeticoes: '10', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/bNnFwTj000I', mediaType: 'video' },
+                    { nome: 'Glúteo Coice na Polia', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/FFD700/000?text=Gluteo+Coice', mediaType: 'image' },
+                ]
+            },
+            {
+                id: 'treino-3',
+                titulo: 'Treino de Peito, Ombros e Tríceps',
+                descricao: 'Foco no desenvolvimento de peito, ombros e tríceps.',
+                exercicios: [
+                    { nome: 'Supino Inclinado com Halteres', series: '4', repeticoes: '8-10', carga: '60kg', mediaUrl: 'https://www.youtube.com/embed/rV16Q85s9gM', mediaType: 'video' },
+                    { nome: 'Desenvolvimento de Ombros com Barra', series: '4', repeticoes: '8-10', carga: 'Carga Desafiadora', mediaUrl: 'https://placehold.co/600x400/B0E0E6/000?text=Desenvolvimento', mediaType: 'image' },
+                    { nome: 'Crucifixo Inclinado com Halteres', series: '4', repeticoes: '12-15', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/j_hXq38rD8o', mediaType: 'video' },
+                    { nome: 'Elevação Lateral com Halteres', series: '4', repeticoes: '10', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/F08080/000?text=Elevacao+Lateral', mediaType: 'image' },
+                    { nome: 'Tríceps Testa com Barra W', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/c29vI-B1V8Y', mediaType: 'video' },
+                    { nome: 'Paralela', series: '3', repeticoes: '15-20', carga: 'Carga Desafiadora', mediaUrl: 'https://placehold.co/600x400/DDA0DD/000?text=Paralela', mediaType: 'image' },
+                ]
+            },
+            {
+                id: 'treino-4',
+                titulo: 'Treino de Quadríceps e Panturrilhas',
+                descricao: 'Foco na força e volume dos quadríceps e panturrilhas.',
+                exercicios: [
+                    { nome: 'Agachamento Livre', series: '4', repeticoes: '8-10', carga: '60kg', mediaUrl: 'https://www.youtube.com/embed/ultjWp9fR6Q', mediaType: 'video' },
+                    { nome: 'Leg Press 45', series: '5', repeticoes: '8-10', carga: '100kg', mediaUrl: 'https://placehold.co/600x400/FFB6C1/000?text=Leg+Press', mediaType: 'image' },
+                    { nome: 'Cadeira Extensora', series: '4', repeticoes: '12-15', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/u1QeJk8Fq6A', mediaType: 'video' },
+                    { nome: 'Hack Squat', series: '4', repeticoes: '10', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/98FB98/000?text=Hack+Squat', mediaType: 'image' },
+                    { nome: 'Panturrilhas', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/u1QeJk8Fq6A', mediaType: 'video' },
+                ]
+            },
+            {
+                id: 'treino-5',
+                titulo: 'Treino de Peito e Costas',
+                descricao: 'Treino de volume para peito e costas.',
+                exercicios: [
+                    { nome: 'Supino Reto com Barra', series: '4', repeticoes: '8-10', carga: '60kg', mediaUrl: 'https://www.youtube.com/embed/R2IqO4J77dY', mediaType: 'video' },
+                    { nome: 'Remada Cavalinho', series: '5', repeticoes: '8-10', carga: '100kg', mediaUrl: 'https://placehold.co/600x400/E6E6FA/000?text=Remada+Cavalinho', mediaType: 'image' },
+                    { nome: 'Crossover', series: '4', repeticoes: '12-15', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/rV16Q85s9gM', mediaType: 'video' },
+                    { nome: 'Puxada com Pegada Fechada (Triângulo)', series: '4', repeticoes: '10', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/FFDEAD/000?text=Puxada+Fechada', mediaType: 'image' },
+                    { nome: 'Desenvolvimento de Ombros com Halteres', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/j_hXq38rD8o', mediaType: 'video' },
+                    { nome: 'Remada Alta', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/B0C4DE/000?text=Remada+Alta', mediaType: 'image' },
+                ]
+            },
+            {
+                id: 'treino-6',
+                titulo: 'Treino de Posterior de Coxa e Panturrilhas',
+                descricao: 'Treino focado em posteriores e panturrilhas.',
+                exercicios: [
+                    { nome: 'Stiff com Barra', series: '4', repeticoes: '8-10', carga: '60kg', mediaUrl: 'https://www.youtube.com/embed/R2IqO4J77dY', mediaType: 'video' },
+                    { nome: 'Mesa Flexora', series: '5', repeticoes: '8-10', carga: '100kg', mediaUrl: 'https://placehold.co/600x400/E6E6FA/000?text=Mesa+Flexora', mediaType: 'image' },
+                    { nome: 'Leg Press Unilateral', series: '4', repeticoes: '12-15', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/j_hXq38rD8o', mediaType: 'video' },
+                    { nome: 'Cadeira Flexora', series: '4', repeticoes: '10', carga: '30kg', mediaUrl: 'https://placehold.co/600x400/B0C4DE/000?text=Cadeira+Flexora', mediaType: 'image' },
+                    { nome: 'Panturrilhas', series: '3', repeticoes: '15-20', carga: '30kg', mediaUrl: 'https://www.youtube.com/embed/c29vI-B1V8Y', mediaType: 'video' },
+                ]
+            }
+        ];
+        localStorage.setItem('treino-aluno', JSON.stringify(treinoData));
+    }
+};
 
-localStorage.setItem('treino-aluno', JSON.stringify(treinoData));
         const loadProfTreinoData = () => {
             const storedProfTreino = localStorage.getItem('treino-prof');
             if (storedProfTreino) {
